@@ -1,103 +1,68 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-zinc-900 text-white font-[family-name:var(--font-geist-sans)] p-0" >
+      <header className="w-full text-center py-12 bg-gray-600 shadow-lg">
+        <h1 className="text-5xl font-extrabold mb-3">Chat with PDF</h1>
+        <p className="text-xl text-gray-300">AI SaaS Application for Conversational PDF Analysis</p>
+        <div className="mt-6 flex justify-center">
+          <Button asChild className="inline-flex items-center px-6 py-3 rounded-md bg-primary text-primary-foreground font-semibold shadow transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+            <Link href="/dashboard">
+              Get Started
+            </Link>
+          </Button>
+        </div>
+      </header>
+      <main className="flex flex-col md:flex-row items-start justify-center flex-1 w-full max-w-6xl gap-12 px-6 py-12">
+        <div className="flex-1 flex flex-col items-center">
+          <img
+            src="https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&w=600"
+            alt="AI Chat with PDF"
+            className="rounded-xl shadow-2xl mb-8 w-full max-w-md"
+          />
+          <h2 className="text-3xl font-semibold mb-4">Features</h2>
+          <ul className="space-y-4 text-lg text-left max-w-md">
+            <li>• <span className="font-bold">Upload PDFs:</span> Instantly start chatting with your documents.</li>
+            <li>• <span className="font-bold">AI Insights:</span> Get answers, summaries, and deep insights from your files.</li>
+            <li>• <span className="font-bold">Privacy First:</span> Secure, private, and easy-to-use interface.</li>
+            <li>• <span className="font-bold">Multilingual:</span> Supports multiple languages and complex documents.</li>
+            <li>• <span className="font-bold">Export & Share:</span> Export chat history and share insights with your team.</li>
+          </ul>
+        </div>
+        <div className="flex-1 flex flex-col items-center">
+          <img
+            src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&w=600"
+            alt="PDF Analysis"
+            className="rounded-xl shadow-2xl mb-8 w-full max-w-md"
+          />
+          <h2 className="text-3xl font-semibold mb-4">How It Works</h2>
+          <ol className="space-y-4 text-lg text-left max-w-md list-decimal list-inside">
+            <li>Upload your PDF document securely.</li>
+            <li>Ask questions or request summaries in natural language.</li>
+            <li>Receive instant, AI-powered responses and insights.</li>
+            <li>Export your chat or share with your team.</li>
+          </ol>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+      <section className="w-full bg-gray-800 py-10 mt-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h3 className="text-2xl font-bold mb-4">Why Choose Us?</h3>
+          <p className="text-lg text-gray-300 mb-6">
+            Our platform leverages state-of-the-art AI to make your PDF documents interactive, insightful, and easy to manage. Whether you&apos;re a student, researcher, or business professional, Chat with PDF helps you unlock the full potential of your documents.
+          </p>
+          <img
+            src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&w=600"
+            alt="Team Collaboration"
+            className="rounded-xl shadow-xl mx-auto w-full max-w-lg"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        </div>
+      </section>
+      <footer className="w-full text-center py-6 bg-gray-900 text-gray-400 text-sm mt-auto">
+        &copy; {new Date().getFullYear()} Chat with PDF. All rights reserved.
       </footer>
-    </div>
+    </div >
   );
 }
