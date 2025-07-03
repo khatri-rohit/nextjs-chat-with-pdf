@@ -1,6 +1,7 @@
-import { SignedIn, UserButton } from '@clerk/nextjs'
 import Link from 'next/link'
-import React from 'react'
+import { SignedIn, UserButton } from '@clerk/nextjs'
+import { FileIcon } from 'lucide-react'
+
 import { Button } from './ui/button'
 
 const Header = () => {
@@ -12,9 +13,12 @@ const Header = () => {
                     <Link href='/dashboard/pricing'>Pricing</Link>
                 </Button>
                 <Button asChild variant='outline' className='md:flex hidden'>
-                    <Link href='/dashboard/upload'>My Document</Link>
+                    <Link href='/dashboard/'>My Document</Link>
                 </Button>
-               
+                <Button asChild variant='outline' className='md:flex hidden'>
+                    <Link href='/dashboard/upload'><FileIcon /> </Link>
+                </Button>
+
                 <SignedIn>
                     <UserButton />
                 </SignedIn>
